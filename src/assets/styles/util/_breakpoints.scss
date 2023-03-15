@@ -1,0 +1,21 @@
+$breakpoint-xs-min: 320px;
+$breakpoint-sm-min: 576px;
+$breakpoint-md-min: 768px;
+$breakpoint-lg-min: 900px;
+$breakpoint-xl-min: 1200px;
+
+// to get em take ex px 1200px / 16 = 75em
+
+$breakpoints-up: (
+  "xsmall": 320px,
+  "small": 576px,
+  "medium": 768px,
+  "large": 900px,
+  "xlarge": 1200px,
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content
+  }
+}

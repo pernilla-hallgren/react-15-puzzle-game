@@ -1,0 +1,24 @@
+h1, 
+h2, 
+h3 {
+    line-height: 1.1; // 110%
+    margin-top: 0;
+}
+
+h1 {
+    font-size: var(--fz-lg-heading);
+    font-family: "OpenSans-Bold", sans-serif; ;
+}
+
+h2 {
+    font-size: var(--fz-xxl);
+}
+
+h3 {
+    font-size: var(--fz-lg);
+}
+
+p {
+    margin-top: 0;
+    font-size: var(--fz-md);
+}

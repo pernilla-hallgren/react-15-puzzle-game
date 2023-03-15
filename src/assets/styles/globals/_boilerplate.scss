@@ -1,0 +1,20 @@
+@use "../util";
+
+html {
+    box-sizing: border-box;
+    font-size: 100%; //16px
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "OpenSans-Regular", sans-serif;    
+    background-color: var(--background-color);
+    color: var(--navy);
+}
