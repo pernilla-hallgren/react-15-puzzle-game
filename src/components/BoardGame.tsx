@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { shuffleRandomOrder } from "../helpers/helpers";
+import Tile from "./Tile";
 
 const BoardGame = () => {
   const numbers: number[] = [
@@ -68,15 +69,7 @@ const BoardGame = () => {
         {isRandomized ? (
           <div className="board__wrapper">
             {randomNumbers.map((number, index) => (
-              <div
-                key={number}
-                onClick={() => handleMoveTiles(number, index)}
-                className={
-                  number === 0 ? "board__emptyTile" : "board__tile"
-                }
-              >
-                {number}
-              </div>
+              <Tile key={number} number={number} onClick={() => handleMoveTiles(number, index)}/>
             ))}
           </div>
         ) : (
