@@ -8,14 +8,12 @@
 
     &__wrapper {
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-wrap: wrap;
         width: 420px;
         height: 420px;
     }
 
-    &__number {
+    &__tile {
         display: flex;
         cursor: pointer;
         background-color: var(--dark-navy);
@@ -28,14 +26,25 @@
         justify-content: center; 
         align-items: center; 
     }
+
+    &__emptyTile {
+        margin: 2px;
+        width: 100px; 
+        height: 100px; 
+        justify-content: center; 
+        align-items: center; 
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 }
 
 .btn {
 
     &__shuffle {
-        padding: 10px 20px;
+        padding: 15px 35px;
         color: var(--green);
-        font-size: var(--fz-sm);
+        font-size: var(--fz-md);
         border-radius: 6px;
         border: none;
         background-color: var(--dark-navy);
