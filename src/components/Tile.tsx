@@ -9,7 +9,7 @@ const Tile: FunctionComponent<Props> = ({ number, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className={number === 0 ? "board__tile_emptyTile" : "board__tile"}
+      className={number === 0 ? "board__tile__emptyTile" : "board__tile"}
     >
       {number}
     </div>
