@@ -9,6 +9,7 @@ const BoardGame = () => {
   const [randomNumbers, setRandomNumbers] = useState<number[]>(numbers);
   const [isRandomized, setIsRandomized] = useState<boolean>(false);
   const [gameSolved, setGameSolved] = useState<boolean>(false);
+  const [showInfo, setShowInfo] = useState<boolean>(false);
 
   // SHUFFLE TILES
   const handleShuffle = () => {
@@ -27,6 +28,11 @@ const BoardGame = () => {
     setRandomNumbers(numbers)
     setGameSolved(true)
   };
+
+  // SHOW INSTRUCTIONS
+  const handleShowInstructions = () => {
+    setShowInfo(!showInfo)
+  }
 
   // MOVE TILES
   const handleMoveTiles = (number: number, index: number) => {
@@ -76,12 +82,23 @@ const BoardGame = () => {
       <button className="btn__shuffle" onClick={handleShuffle}>
         Shuffle
       </button>
+        <button className="btn" onClick={handleShowInstructions}>Instructions</button>
+      </div>
       {gameSolved && (
           <div>
             <h2>Congratulations, you won!</h2>
           </div>
         )}
-      <div className="container">
+      {showInfo ? (
+        <p className="board__instructions">To solve the 15 puzzle game, identify misplaced tiles, move them towards their 
+          correct position by clicking on adjacent tiles, and repeat until all tiles are in 
+          the correct positions. You win when all the tiles are in ascending order. 
+          Be patient and persistent.
+          <br/><br/>
+          Good Luck!
+        </p>
+      ) : null}
+      <div>
         {isRandomized ? (
           <div className="board__wrapper">
             {randomNumbers.map((number, index) => (
