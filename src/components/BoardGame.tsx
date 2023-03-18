@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { shuffleRandomOrder } from "../helpers/helpers";
+import { isGameSolved, shuffleRandomOrder } from "../helpers/helpers";
 import Tile from "./Tile";
 
 const BoardGame = () => {
@@ -15,6 +15,17 @@ const BoardGame = () => {
     const shuffledNumbers = shuffleRandomOrder(randomNumbers);
     setRandomNumbers(shuffledNumbers);
     setIsRandomized(true);
+    const gameFinished = isGameSolved(shuffledNumbers)
+    setShowInfo(false)
+    if(!gameFinished) {
+      setGameSolved(false)
+    }
+  };
+
+  // WIN GAME 
+  const handleWinGame = () => {
+    setRandomNumbers(numbers)
+    setGameSolved(true)
   };
 
   // MOVE TILES
@@ -52,6 +63,11 @@ const BoardGame = () => {
 
     [shiftedTiles[valueIndex], shiftedTiles[zeroIndex]] = [shiftedTiles[zeroIndex], shiftedTiles[valueIndex]];
     setRandomNumbers(shiftedTiles);
+
+    const gameFinished = isGameSolved(shiftedTiles)
+    if(gameFinished) {
+      setGameSolved(true)
+    }
   };
   
 
