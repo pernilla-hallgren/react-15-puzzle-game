@@ -46,6 +46,13 @@ const BoardGame = () => {
       Math.abs(valueIndex - zeroIndex) === 1 // check horizontal 
     ) {
       shiftTiles(valueIndex, zeroIndex);
+      // TRIED TO SHIFT MORE THAN ONE - but didn't manage to finish it :( 
+      // let valueIndexRightHorizontal = valueIndex + 1
+      // let valueIndexVertical = valueIndex + 4
+
+      // if(valueIndexRightHorizontal === zeroIndex - 1 || valueIndexVertical === zeroIndex - 4) {
+      //   shiftMultipleTiles(valueIndex, zeroIndex, valueIndexRightHorizontal, valueIndexVertical);
+      // }
     }
 
     if (
@@ -75,7 +82,20 @@ const BoardGame = () => {
       setGameSolved(true)
     }
   };
-  
+
+  // SHIFT SEVERAL TILES - started on this but didn't manage to finish it :(
+  // const shiftMultipleTiles = (valueIndex: number, zeroIndex: number, valueIndexRightHorizontal: number, valueIndexVertical: number) => {
+  //   const shiftedTiles: number[] = [...randomNumbers];
+
+  //   [shiftedTiles[valueIndex], shiftedTiles[valueIndexRightHorizontal], shiftedTiles[zeroIndex]] = [shiftedTiles[zeroIndex], shiftedTiles[valueIndex], shiftedTiles[valueIndexRightHorizontal]];
+  //   [shiftedTiles[valueIndex], shiftedTiles[valueIndexVertical], shiftedTiles[zeroIndex]] = [shiftedTiles[zeroIndex], shiftedTiles[valueIndex], shiftedTiles[valueIndexVertical]];
+  //   setRandomNumbers(shiftedTiles);
+
+  //   const gameFinished = isGameSolved(shiftedTiles)
+  //   if(gameFinished) {
+  //     setGameSolved(true)
+  //   }
+  // };
 
   return (
     <div className="container">
