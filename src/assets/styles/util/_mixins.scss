@@ -1,0 +1,31 @@
+@use "../globals/variables" as s;
+
+@mixin xs {
+  @media (min-width: s.$screen-xs-mins) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: s.$screen-sm-min) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: s.$screen-md-min) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: s.$screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: s.$screen-xl-min) {
+    @content;
+  }
+}

@@ -2,7 +2,6 @@ h1,
 h2, 
 h3 {
     line-height: 1.1; // 110%
-    margin-top: 0;
 }
 
 h1 {
@@ -21,6 +20,7 @@ h3 {
 }
 
 p {
-    margin-top: 0;
+    margin: 0 20px 40px;
     font-size: var(--fz-md);
+    color: var(--light-navy)
 }

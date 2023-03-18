@@ -1,56 +1,96 @@
+@use "../util" as m;
+
 .container {
-    align-items: center;
-    justify-content: center;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .board {
-
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        width: 420px;
-        height: 420px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 4px;
+
+        @include m.lg {
+            height: auto;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
     }
 
     &__tile {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+  
         cursor: pointer;
         background-color: var(--dark-navy);
         border-radius: 6px;
-        margin: 2px;
         color: var(--green);
-        width: 100px; 
-        height: 100px; 
         border: 1px solid var(--light-navy); 
-        justify-content: center; 
-        align-items: center; 
+
+        @include m.lg {
+            padding: 40px;
+        }
+
+        &__emptyTile {
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
     }
 
-    &__emptyTile {
-        margin: 2px;
-        width: 100px; 
-        height: 100px; 
-        justify-content: center; 
-        align-items: center; 
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;
+    &__instructions {
+        margin: 0 20px 40px;
+        width: 90%;
+
+        @include m.lg {
+            width: 40%;
+        }
     }
 }
 
 .btn {
+    padding: 15px 35px;
+    color: var(--green);
+    font-size: var(--fz-md);
+    border-radius: 6px;
+    border: none;
+    background-color: var(--dark-navy);
+    box-shadow: 0px 0px 2px var(--green);
+    cursor: pointer;
+    margin: 0 10px 40px;
 
-    &__shuffle {
-        padding: 15px 35px;
-        color: var(--green);
-        font-size: var(--fz-md);
-        border-radius: 6px;
-        border: none;
+    &.win {
+        color: var(--medium-navy);
         background-color: var(--dark-navy);
-        box-shadow: 0px 0px 2px var(--green);
-        cursor: pointer;
-        margin-bottom: 40px;
+        box-shadow: 0px 0px 2px var(--medium-navy);
+
+        &:hover {
+            background-color: var(--navy-opactiy);
+            box-shadow: 0px 0px 2px var(--greenHover);
+            color: var(--greenHover);
+        }
+    }
+
+    &:hover {
+        background-color: var(--navy-opactiy);
+        box-shadow: 0px 0px 2px var(--greenHover);
+        color: var(--greenHover);
     }
 }
 
+.btn-section {
+    margin-top: 40px;
+}

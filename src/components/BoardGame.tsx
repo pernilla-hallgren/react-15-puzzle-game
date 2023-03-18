@@ -78,17 +78,18 @@ const BoardGame = () => {
   
 
   return (
-    <div>
-      <button className="btn__shuffle" onClick={handleShuffle}>
-        Shuffle
-      </button>
+    <div className="container">
+      <div className="btn-wrapper">
+        <button className="btn" onClick={handleShuffle}>
+          Shuffle
+        </button>
         <button className="btn" onClick={handleShowInstructions}>Instructions</button>
       </div>
       {gameSolved && (
-          <div>
-            <h2>Congratulations, you won!</h2>
-          </div>
-        )}
+        <div>
+          <h2>Congratulations, you won!</h2>
+        </div>
+      )}
       {showInfo ? (
         <p className="board__instructions">To solve the 15 puzzle game, identify misplaced tiles, move them towards their 
           correct position by clicking on adjacent tiles, and repeat until all tiles are in 
@@ -100,13 +101,18 @@ const BoardGame = () => {
       ) : null}
       <div>
         {isRandomized ? (
-          <div className="board__wrapper">
-            {randomNumbers.map((number, index) => (
-              <Tile key={number} number={number} onClick={() => handleMoveTiles(number, index)}/>
-            ))}
-          </div>
+          <>
+            <div className="board__wrapper">
+              {randomNumbers.map((number, index) => (
+                <Tile key={number} number={number} onClick={() => handleMoveTiles(number, index)}/>
+              ))}
+            </div>
+            <div className="btn-section">
+              <button className="btn win" onClick={handleWinGame}>Solve the game</button>
+            </div>
+          </>
         ) : (
-          <p>Click to start the game!</p>
+          <p>Click shuffle to start the game!</p>
         )}
       </div>
     </div>
