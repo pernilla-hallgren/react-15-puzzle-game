@@ -41,20 +41,6 @@ const BoardGame = () => {
     ) {
       shiftTiles(valueIndex, zeroIndex);
     }
-
-    if (
-      Math.abs(valueIndex - zeroIndex) === 8 ||
-      Math.abs(valueIndex - zeroIndex) === 2
-    ) {
-      shiftTiles(valueIndex, zeroIndex);
-    }
-
-    if (
-      Math.abs(valueIndex - zeroIndex) === 12 ||
-      Math.abs(valueIndex - zeroIndex) === 3
-    ) {
-      shiftTiles(valueIndex, zeroIndex);
-    }
   };
 
   const shiftTiles = (valueIndex: number, zeroIndex: number) => {
